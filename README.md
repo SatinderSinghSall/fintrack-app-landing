@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="https://your-live-url.vercel.app"><b>🌐 Live Demo</b></a> •
+  <a href="https://fintrack-app-satinder.vercel.app"><b>🌐 Live Demo</b></a> •
   <a href="https://satinder-portfolio.vercel.app"><b>👨‍💻 Portfolio</b></a> •
   <a href="https://satinder-portfolio.vercel.app/contact"><b>📬 Contact</b></a>
 </p>

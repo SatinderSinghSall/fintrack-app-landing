@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     title: "FinTrack — Smart Personal Finance App",
     description:
       "A clean and intuitive finance app to track expenses, manage budgets, and grow your savings.",
-    url: "https://your-domain.com",
+    url: "https://fintrack-app-satinder.vercel.app",
     siteName: "FinTrack",
     images: [
       {
