@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://fintrack-app-satinder.vercel.app"),
 
   verification: {
-    google: "Clu0eX7kWXX7mFQV5wkswIW0EorAyp-yR8K4co_IhE",
+    google: "CLiuOeX7kVXX7mFQV5wkswIWOEorAvp-yr8K4co_IhE",
   },
 
   title: {
