@@ -35,9 +35,9 @@ export default function Screenshots() {
           See FinTrack in action
         </h2>
 
-        <p className="mt-4 sm:mt-6 text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-          A clean, intuitive experience designed to help you stay in control of
-          your finances.
+        <p className="mt-4 sm:mt-6 text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
+          A clean, intuitive experience designed mobile app to help you stay in
+          control of your finances.
         </p>
 
         {/* GRID */}

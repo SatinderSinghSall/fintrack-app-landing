@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   GithubLogo,
   LinkedinLogo,
@@ -19,7 +20,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold tracking-tight">FinTrack</h3>
             <p className="mt-3 text-gray-500 text-sm leading-relaxed">
               Track expenses, manage budgets, and grow your savings — all in one
-              beautifully simple app.
+              beautifully simple mobile app.
             </p>
           </div>
 
@@ -39,7 +40,7 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black">
+                  <a href="#pricing" className="hover:text-black">
                     Pricing
                   </a>
                 </li>
@@ -59,12 +60,16 @@ export default function Footer() {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black">
+                  <Link href="/about" className="hover:text-black transition">
                     About
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black">
+                  <a
+                    href="https://satinder-portfolio.vercel.app/contact"
+                    target="_blank"
+                    className="hover:text-black"
+                  >
                     Contact
                   </a>
                 </li>

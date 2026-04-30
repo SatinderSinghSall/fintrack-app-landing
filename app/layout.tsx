@@ -13,12 +13,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://fintrack-app-satinder.vercel.app"),
+
+  verification: {
+    google: "Clu0eX7kWXX7mFQV5wkswIW0EorAyp-yR8K4co_IhE",
+  },
+
   title: {
     default: "FinTrack — Smart Personal Finance App",
     template: "%s | FinTrack",
   },
+
   description:
     "Track expenses, manage budgets, and grow your savings effortlessly with FinTrack — a clean and intuitive personal finance app.",
+
   keywords: [
     "FinTrack",
     "finance app",
@@ -27,8 +35,13 @@ export const metadata: Metadata = {
     "personal finance",
     "money management",
   ],
+
   authors: [{ name: "Satinder Singh Sall" }],
   creator: "Satinder Singh Sall",
+
+  alternates: {
+    canonical: "https://fintrack-app-satinder.vercel.app",
+  },
 
   openGraph: {
     title: "FinTrack — Smart Personal Finance App",
@@ -71,7 +84,57 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        {children}
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Person",
+                  name: "Satinder Singh Sall",
+                  url: "https://satinder-portfolio.vercel.app/",
+                  sameAs: [
+                    "https://www.linkedin.com/in/satinder-singh-sall-b62049204",
+                    "https://github.com/SatinderSinghSall",
+                    "https://x.com/SallSatinder",
+                    "https://www.youtube.com/@satindersinghsall.3841/featured",
+                  ],
+                  worksFor: {
+                    "@type": "Organization",
+                    name: "FinTrack",
+                  },
+                },
+                {
+                  "@type": "MobileApplication",
+                  name: "FinTrack",
+                  applicationCategory: "FinanceApplication",
+                  operatingSystem: "Android, iOS",
+                  description:
+                    "Track expenses, manage budgets, and grow your savings with FinTrack.",
+                  url: "https://fintrack-app-satinder.vercel.app",
+                  creator: {
+                    "@type": "Person",
+                    name: "Satinder Singh Sall",
+                  },
+                  publisher: {
+                    "@type": "Organization",
+                    name: "FinTrack",
+                  },
+                },
+                {
+                  "@type": "Organization",
+                  name: "FinTrack",
+                  url: "https://fintrack-app-satinder.vercel.app",
+                },
+              ],
+            }),
+          }}
+        />
+      </body>
     </html>
   );
 }

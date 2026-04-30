@@ -5,6 +5,8 @@ import CTA from "@/components/cta";
 import Footer from "@/components/footer";
 import Screenshots from "@/components/screenshots";
 import DeveloperCredit from "@/components/developer-credit";
+import Testimonials from "@/components/testimonials";
+import Pricing from "@/components/pricing";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <Features />
       <Screenshots />
       <CTA />
+      <Pricing />
+      <Testimonials />
       <DeveloperCredit />
       <Footer />
     </main>

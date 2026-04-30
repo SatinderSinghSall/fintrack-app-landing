@@ -32,7 +32,7 @@ export default function AppStatusModal({
       >
         <DialogHeader className="text-center space-y-4">
           <DialogTitle className="text-xl font-semibold tracking-tight">
-            🚧 App Under Development
+            🚧 Mobile App is Under Development
           </DialogTitle>
 
           <div className="flex justify-center">
@@ -42,7 +42,7 @@ export default function AppStatusModal({
           </div>
 
           <h3 className="text-2xl md:text-3xl font-semibold tracking-tight">
-            FinTrack is not live yet
+            FinTrack is not live yet.
           </h3>
 
           <DialogDescription className="text-gray-600 text-sm md:text-base leading-relaxed max-w-md mx-auto">
@@ -53,7 +53,7 @@ export default function AppStatusModal({
             to refine performance and polish the experience before launch.
             <br />
             <br />
-            You can request early access or reach out directly 👇
+            You can request early access or reach out the developer directly.
           </DialogDescription>
         </DialogHeader>
 
@@ -88,8 +88,8 @@ export default function AppStatusModal({
           </DialogTrigger>
         </div>
 
-        <p className="text-center text-xs text-gray-400 mt-4">
-          Public release coming soon 🚀
+        <p className="text-center text-s text-gray-400 mt-4">
+          Public release coming soon...
         </p>
       </DialogContent>
     </Dialog>

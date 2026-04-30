@@ -19,7 +19,7 @@ export default function Hero() {
       {/* Badge */}
       <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-6 text-sm rounded-full border bg-white/80 backdrop-blur shadow-sm">
         <Wallet size={14} />
-        <span className="text-gray-700">Smart Personal Finance App</span>
+        <span className="text-gray-700">Smart Personal Finance Mobile App</span>
       </div>
 
       {/* Headline */}
@@ -36,7 +36,7 @@ export default function Hero() {
       {/* Subtext */}
       <p className="mt-8 max-w-2xl mx-auto text-lg md:text-xl text-gray-600 leading-relaxed">
         Track expenses, manage budgets, and grow your savings effortlessly — all
-        in one powerful app.
+        in one powerful mobile app.
       </p>
 
       {/* CTA */}
