@@ -30,18 +30,23 @@ export default function Footer() {
               <p className="font-semibold mb-3 text-gray-900">Product</p>
               <ul className="space-y-2 text-gray-500">
                 <li>
-                  <a href="#features" className="hover:text-black">
+                  <a href="/features" className="hover:text-black">
                     Features
                   </a>
                 </li>
                 <li>
-                  <a href="#screenshots" className="hover:text-black">
+                  <a href="/screenshots" className="hover:text-black">
                     Screenshots
                   </a>
                 </li>
                 <li>
-                  <a href="#pricing" className="hover:text-black">
+                  <a href="/pricing" className="hover:text-black">
                     Pricing
+                  </a>
+                </li>
+                <li>
+                  <a href="/testimonials" className="hover:text-black">
+                    Testimonials
                   </a>
                 </li>
               </ul>
@@ -80,12 +85,20 @@ export default function Footer() {
               <p className="font-semibold mb-3 text-gray-900">Legal</p>
               <ul className="space-y-2 text-gray-500">
                 <li>
-                  <a href="#" className="hover:text-black">
+                  <a
+                    href="https://fintrack-policy.vercel.app"
+                    target="_blank"
+                    className="hover:text-black"
+                  >
                     Privacy
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="hover:text-black">
+                  <a
+                    href="https://fintrack-policy.vercel.app"
+                    target="_blank"
+                    className="hover:text-black"
+                  >
                     Terms
                   </a>
                 </li>
