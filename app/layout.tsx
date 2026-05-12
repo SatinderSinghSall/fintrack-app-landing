@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     siteName: "FinTrack",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://fintrack-app-satinder.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "FinTrack App Preview",
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     title: "FinTrack — Smart Personal Finance App",
     description:
       "Track expenses, manage budgets, and grow your savings effortlessly.",
-    images: ["/og-image.png"],
+    images: ["https://fintrack-app-satinder.vercel.app/og-image.png"],
   },
 
   icons: {
