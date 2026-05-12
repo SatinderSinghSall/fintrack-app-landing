@@ -7,6 +7,7 @@ import Screenshots from "@/components/screenshots";
 import DeveloperCredit from "@/components/developer-credit";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
+import WaitlistModal from "@/components/waitlist-modal";
 
 export default function Home() {
   return (
@@ -20,6 +21,8 @@ export default function Home() {
       <Testimonials />
       <DeveloperCredit />
       <Footer />
+
+      <WaitlistModal />
     </main>
   );
 }
