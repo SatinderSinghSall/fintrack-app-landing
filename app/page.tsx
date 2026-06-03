@@ -7,7 +7,8 @@ import Screenshots from "@/components/screenshots";
 import DeveloperCredit from "@/components/developer-credit";
 import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
-import WaitlistModal from "@/components/waitlist-modal";
+import GooglePlayCTA from "@/components/GooglePlayCTA";
+import TrustSection from "@/components/TrustSection";
 
 export default function Home() {
   return (
@@ -19,10 +20,10 @@ export default function Home() {
       <CTA />
       <Pricing />
       <Testimonials />
+      <TrustSection />
+      <GooglePlayCTA />
       <DeveloperCredit />
       <Footer />
-
-      <WaitlistModal />
     </main>
   );
 }

@@ -72,7 +72,7 @@ export default function CTA() {
           {/* CTA BUTTONS */}
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
             <AppStatusModal>
-              <Button className="px-8 py-6 rounded-full bg-black text-white text-base hover:scale-[1.03] transition">
+              <Button className="px-8 py-6 rounded-full bg-black text-white text-base hover:scale-[1.03] transition cursor-pointer">
                 Get Started
               </Button>
             </AppStatusModal>
@@ -80,7 +80,7 @@ export default function CTA() {
             <AppStatusModal>
               <Button
                 variant="outline"
-                className="px-8 py-6 rounded-full text-base hover:scale-[1.03] transition"
+                className="px-8 py-6 rounded-full text-base hover:scale-[1.03] transition cursor-pointer"
               >
                 Learn More →
               </Button>

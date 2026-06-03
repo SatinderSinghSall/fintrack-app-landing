@@ -1,7 +1,9 @@
 "use client";
 
 import Footer from "@/components/footer";
+import GooglePlayCTA from "@/components/GooglePlayCTA";
 import Navbar from "@/components/navbar";
+import TrustSection from "@/components/TrustSection";
 import Image from "next/image";
 
 const screenshots = [
@@ -79,6 +81,9 @@ export default function Screenshots() {
           </div>
         </div>
       </section>
+
+      <TrustSection />
+      <GooglePlayCTA />
 
       <Footer />
     </>

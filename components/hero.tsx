@@ -43,7 +43,7 @@ export default function Hero() {
       <div className="mt-10 flex flex-col sm:flex-row justify-center gap-4">
         {/* GET STARTED */}
         <AppStatusModal>
-          <Button className="w-full sm:w-auto px-8 py-6 text-lg rounded-full bg-black text-white hover:bg-gray-900 shadow-lg">
+          <Button className="w-full sm:w-auto px-8 py-6 text-lg rounded-full bg-black text-white hover:bg-gray-900 shadow-lg cursor-pointer">
             Get Started
           </Button>
         </AppStatusModal>
@@ -52,7 +52,7 @@ export default function Hero() {
         <AppStatusModal>
           <Button
             variant="outline"
-            className="w-full sm:w-auto px-8 py-6 text-lg rounded-full border-gray-300 hover:bg-gray-50"
+            className="w-full sm:w-auto px-8 py-6 text-lg rounded-full border-gray-300 hover:bg-gray-50 cursor-pointer"
           >
             Learn More
           </Button>

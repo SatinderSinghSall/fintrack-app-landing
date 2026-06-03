@@ -24,45 +24,50 @@ export default function WaitlistModal() {
   });
 
   useEffect(() => {
-    // Already joined waitlist
+    if (typeof window === "undefined") return;
+
     const joined = localStorage.getItem("fintrack-waitlist-joined");
 
     if (joined === "true") return;
 
-    // Cooldown check
     const dismissedUntil = localStorage.getItem("fintrack-waitlist-dismissed");
 
-    if (dismissedUntil && Date.now() < Number(dismissedUntil)) {
+    const now = Date.now();
+
+    // Prevent showing before cooldown ends
+    if (dismissedUntil && now < Number(dismissedUntil)) {
       return;
     }
 
-    // Initial popup (8–12 sec)
-    const initialDelay = Math.floor(Math.random() * 4000) + 8000;
+    // Show after 5–10 seconds
+    const initialDelay = Math.floor(Math.random() * 5000) + 5000;
 
-    const initialTimer = setTimeout(() => {
+    const timer = setTimeout(() => {
       setIsOpen(true);
     }, initialDelay);
 
-    // Smart recurring popup
-    const recurringTimer = setInterval(() => {
-      const shouldShow = Math.random() > 0.65;
+    return () => clearTimeout(timer);
+  }, []);
 
-      if (!isOpen && shouldShow) {
-        setIsOpen(true);
-      }
-    }, 120000);
+  useEffect(() => {
+    if (isOpen) {
+      // Lock body scroll
+      document.body.style.overflow = "hidden";
+    } else {
+      // Restore scroll
+      document.body.style.overflow = "auto";
+    }
 
     return () => {
-      clearTimeout(initialTimer);
-      clearInterval(recurringTimer);
+      document.body.style.overflow = "auto";
     };
   }, [isOpen]);
 
   const handleClose = () => {
     setIsOpen(false);
 
-    // 12h cooldown
-    const nextShow = Date.now() + 12 * 60 * 60 * 1000;
+    // Reopen after 15 minutes
+    const nextShow = Date.now() + 15 * 60 * 1000;
 
     localStorage.setItem("fintrack-waitlist-dismissed", nextShow.toString());
   };
@@ -87,7 +92,7 @@ export default function WaitlistModal() {
 
       setTimeout(() => {
         setIsOpen(false);
-      }, 3000);
+      }, 15000);
     } catch (error) {
       console.error("Error adding waitlist user:", error);
     } finally {
@@ -99,7 +104,6 @@ export default function WaitlistModal() {
 
   return (
     <div
-      onClick={handleClose}
       className="
         fixed inset-0 z-[9999]
         flex items-start justify-center
@@ -165,6 +169,7 @@ export default function WaitlistModal() {
             hover:text-black
             hover:scale-105
             active:scale-95
+            cursor-pointer
           "
         >
           <X className="h-5 w-5" />
@@ -480,6 +485,7 @@ export default function WaitlistModal() {
                 active:scale-[0.99]
                 disabled:cursor-not-allowed
                 disabled:opacity-80
+                cursor-pointer
               "
               >
                 {isSubmitting ? (

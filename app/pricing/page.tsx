@@ -14,6 +14,8 @@ import { useState } from "react";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import AppStatusModal from "@/components/app-status-modal";
+import TrustSection from "@/components/TrustSection";
+import GooglePlayCTA from "@/components/GooglePlayCTA";
 
 const freeFeatures = [
   {
@@ -135,7 +137,7 @@ export default function Pricing() {
               <div className="bg-gray-100 p-1 rounded-full flex gap-1">
                 <button
                   onClick={() => setYearly(false)}
-                  className={`px-4 py-2 text-sm rounded-full transition ${
+                  className={`px-4 py-2 text-sm rounded-full transition cursor-pointer ${
                     !yearly ? "bg-white shadow font-medium" : "text-gray-500"
                   }`}
                 >
@@ -143,7 +145,7 @@ export default function Pricing() {
                 </button>
                 <button
                   onClick={() => setYearly(true)}
-                  className={`px-4 py-2 text-sm rounded-full transition ${
+                  className={`px-4 py-2 text-sm rounded-full transition cursor-pointer ${
                     yearly ? "bg-white shadow font-medium" : "text-gray-500"
                   }`}
                 >
@@ -266,7 +268,7 @@ export default function Pricing() {
                   {/* CTA */}
                   <AppStatusModal>
                     <button
-                      className={`mt-8 w-full py-3 rounded-xl text-sm font-medium transition ${
+                      className={`mt-8 w-full py-3 rounded-xl text-sm font-medium transition cursor-pointer ${
                         plan.highlight
                           ? "bg-indigo-600 text-white hover:bg-indigo-700 shadow-md"
                           : "bg-gray-100 hover:bg-gray-200"
@@ -281,6 +283,9 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+      <TrustSection />
+      <GooglePlayCTA />
 
       <Footer />
     </>

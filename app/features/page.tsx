@@ -11,6 +11,9 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
+import TrustSection from "@/components/TrustSection";
+import DeveloperCredit from "@/components/developer-credit";
+import GooglePlayCTA from "@/components/GooglePlayCTA";
 
 const features = [
   {
@@ -141,6 +144,11 @@ export default function Features() {
           </div>
         </div>
       </section>
+
+      <TrustSection />
+      <GooglePlayCTA />
+
+      <DeveloperCredit />
 
       <Footer />
     </>

@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import WaitlistModal from "@/components/waitlist-modal";
+import JoinedWaitlistModal from "@/components/joined-waitlist-modal";
+import ScrollToTop from "@/components/scroll-to-top";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -20,20 +24,34 @@ export const metadata: Metadata = {
   },
 
   title: {
-    default: "FinTrack — Smart Personal Finance App",
+    default:
+      "FinTrack — Smart Personal Finance, Budget, Savings & Expense Tracker App | Developed by Satinder Singh Sall",
     template: "%s | FinTrack",
   },
 
   description:
-    "Track expenses, manage budgets, and grow your savings effortlessly with FinTrack — a clean and intuitive personal finance app.",
+    "FinTrack is a modern personal finance, budget, savings, and expense tracker mobile app designed to help users manage money smarter with intuitive analytics, budgeting tools, and clean financial insights. Developed by Satinder Singh Sall.",
 
   keywords: [
     "FinTrack",
     "finance app",
     "expense tracker",
     "budget app",
-    "personal finance",
-    "money management",
+    "personal finance app",
+    "money management app",
+    "expense management",
+    "budget tracker",
+    "financial planning",
+    "mobile finance app",
+    "expense tracking app",
+    "savings tracker",
+    "budgeting app",
+    "React Native finance app",
+    "Satinder Singh Sall",
+    "FinTrack mobile app",
+    "Mobile App",
+    "Finance Mobile App",
+    "finance mobile app",
   ],
 
   authors: [{ name: "Satinder Singh Sall" }],
@@ -43,12 +61,27 @@ export const metadata: Metadata = {
     canonical: "https://fintrack-app-satinder.vercel.app",
   },
 
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
+  category: "technology",
+
   openGraph: {
-    title: "FinTrack — Smart Personal Finance App",
+    title:
+      "FinTrack — Smart Budget, Savings & Expense Tracker App | Smart Personal Finance App",
     description:
       "A clean and intuitive finance app to track expenses, manage budgets, and grow your savings.",
     url: "https://fintrack-app-satinder.vercel.app",
-    siteName: "FinTrack",
+    siteName: "FinTrack — Smart Finance App",
     images: [
       {
         url: "https://fintrack-app-satinder.vercel.app/og-image.png",
@@ -63,9 +96,10 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "FinTrack — Smart Personal Finance App",
+    title:
+      "FinTrack — Smart Budget, Savings & Expense Tracker App | Smart Personal Finance App",
     description:
-      "Track expenses, manage budgets, and grow your savings effortlessly.",
+      "Manage expenses, budgets, savings, and personal finances smarter with FinTrack. Track expenses, manage budgets, and grow your savings effortlessly.",
     images: ["https://fintrack-app-satinder.vercel.app/og-image.png"],
   },
 
@@ -87,6 +121,11 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         {children}
 
+        <WaitlistModal />
+        <JoinedWaitlistModal />
+
+        <ScrollToTop />
+
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -105,14 +144,15 @@ export default function RootLayout({
                   ],
                   worksFor: {
                     "@type": "Organization",
-                    name: "FinTrack",
+                    name: "FinTrack: Expense & Budget",
                   },
                 },
                 {
                   "@type": "MobileApplication",
-                  name: "FinTrack",
+                  name: "FinTrack: Expense & Budget",
                   applicationCategory: "FinanceApplication",
                   operatingSystem: "Android, iOS",
+                  softwareVersion: "2.7.1",
                   description:
                     "Track expenses, manage budgets, and grow your savings with FinTrack.",
                   url: "https://fintrack-app-satinder.vercel.app",
@@ -124,6 +164,8 @@ export default function RootLayout({
                     "@type": "Organization",
                     name: "FinTrack",
                   },
+                  downloadUrl:
+                    "https://play.google.com/store/apps/details?id=com.satinder_singh_sall.mobileapp",
                 },
                 {
                   "@type": "Organization",
