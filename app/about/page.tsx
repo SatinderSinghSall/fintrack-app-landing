@@ -25,6 +25,7 @@ import {
 } from "lucide-react";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
 import TrustSection from "@/components/TrustSection";
+import DeveloperCredit from "@/components/developer-credit";
 
 const socials = [
   {
@@ -461,6 +462,7 @@ export default function AboutPage() {
 
       <TrustSection />
 
+      <DeveloperCredit />
       <Footer />
     </main>
   );

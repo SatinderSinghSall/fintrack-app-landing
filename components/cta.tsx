@@ -7,8 +7,11 @@ import {
 } from "@/components/base/buttons/app-store-buttons";
 import Image from "next/image";
 import AppStatusModal from "./app-status-modal";
+import PlatformDownloadModal from "./platform-download-modal";
 
 export default function CTA() {
+  const isLive = true;
+
   return (
     <section className="relative py-32 px-6 overflow-hidden">
       {/* Background */}
@@ -88,25 +91,50 @@ export default function CTA() {
           </div>
 
           {/* DOWNLOAD */}
+          {/* DOWNLOAD */}
           <div className="mt-14">
             <p className="text-sm text-gray-500 mb-6">
-              Coming soon on your favorite platforms.
+              {isLive
+                ? "Available now on Android devices."
+                : "Coming soon on your favorite platforms."}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center sm:items-start">
-              <GooglePlayButton
-                size="md"
-                className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              />
+              {/* Android */}
+              <PlatformDownloadModal platform="android" isLive={true}>
+                <GooglePlayButton
+                  size="md"
+                  className="
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+          cursor-pointer
+        "
+                />
+              </PlatformDownloadModal>
 
-              <AppStoreButton
-                size="md"
-                className="transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              />
+              {/* iOS */}
+              <PlatformDownloadModal platform="ios" isLive={false}>
+                <AppStoreButton
+                  size="md"
+                  className="
+          transition-all duration-300
+          hover:-translate-y-1
+          hover:shadow-lg
+          cursor-pointer
+        "
+                />
+              </PlatformDownloadModal>
             </div>
 
-            <p className="mt-5 text-s text-gray-400">
-              🚀 Launching soon • Early access available, contact developer.
+            <p className="mt-5 text-sm text-gray-400">
+              {isLive ? (
+                <>🎉 Now live on Google Play • Download FinTrack today.</>
+              ) : (
+                <>
+                  🚀 Launching soon • Early access available, contact developer.
+                </>
+              )}
             </p>
           </div>
         </div>

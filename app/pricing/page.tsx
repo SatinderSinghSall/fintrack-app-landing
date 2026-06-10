@@ -16,6 +16,7 @@ import Navbar from "@/components/navbar";
 import AppStatusModal from "@/components/app-status-modal";
 import TrustSection from "@/components/TrustSection";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
+import DeveloperCredit from "@/components/developer-credit";
 
 const freeFeatures = [
   {
@@ -287,6 +288,7 @@ export default function Pricing() {
       <TrustSection />
       <GooglePlayCTA />
 
+      <DeveloperCredit />
       <Footer />
     </>
   );

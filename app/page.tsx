@@ -9,6 +9,7 @@ import Testimonials from "@/components/testimonials";
 import Pricing from "@/components/pricing";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
 import TrustSection from "@/components/TrustSection";
+import PlayStoreCTA from "@/components/PlayStoreCTA";
 
 export default function Home() {
   return (
@@ -17,9 +18,10 @@ export default function Home() {
       <Hero />
       <Features />
       <Screenshots />
-      <CTA />
+      <PlayStoreCTA />
       <Pricing />
       <Testimonials />
+      <CTA />
       <TrustSection />
       <GooglePlayCTA />
       <DeveloperCredit />

@@ -1,5 +1,6 @@
 "use client";
 
+import DeveloperCredit from "@/components/developer-credit";
 import Footer from "@/components/footer";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
 import Navbar from "@/components/navbar";
@@ -85,6 +86,7 @@ export default function Screenshots() {
       <TrustSection />
       <GooglePlayCTA />
 
+      <DeveloperCredit />
       <Footer />
     </>
   );

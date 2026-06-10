@@ -8,7 +8,14 @@ import {
   BarChart3,
   Target,
   Bell,
+  ShieldCheck,
+  Smartphone,
+  Repeat,
+  CreditCard,
+  LayoutDashboard,
+  BadgeCheck,
 } from "lucide-react";
+
 import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import TrustSection from "@/components/TrustSection";
@@ -20,49 +27,108 @@ const features = [
     icon: Wallet,
     title: "Expense Tracking",
     description:
-      "Track every expense in real-time and understand where your money goes daily.",
-    color: "from-gray-200 to-gray-100",
-    iconColor: "text-gray-700",
+      "Track daily expenses in real-time and understand exactly where your money goes.",
+    color: "from-zinc-200 to-zinc-100",
+    iconColor: "text-zinc-700",
   },
+
   {
     icon: TrendingUp,
     title: "Income Management",
     description:
-      "Log and monitor all income sources to get a complete financial overview.",
+      "Monitor all income sources and maintain a complete overview of your finances.",
     color: "from-emerald-200 to-emerald-100",
     iconColor: "text-emerald-600",
   },
+
   {
     icon: PiggyBank,
     title: "Savings Goals",
     description:
-      "Set savings targets and track progress to achieve your financial goals faster.",
+      "Create personalized savings targets and track progress toward your financial milestones.",
     color: "from-violet-200 to-violet-100",
     iconColor: "text-violet-600",
   },
+
   {
     icon: Target,
     title: "Smart Budgets",
     description:
-      "Create monthly budgets and stay on track with intelligent spending insights.",
+      "Set monthly budgets with intelligent insights to help control spending habits.",
     color: "from-blue-200 to-blue-100",
     iconColor: "text-blue-600",
   },
+
   {
     icon: BarChart3,
     title: "Advanced Analytics",
     description:
-      "Visualize your finances with charts and insights to make better decisions.",
+      "Visualize spending trends, savings growth, and financial performance with powerful analytics.",
     color: "from-amber-200 to-amber-100",
     iconColor: "text-amber-600",
   },
+
+  {
+    icon: Repeat,
+    title: "Subscription Tracking",
+    description:
+      "Manage recurring subscriptions and avoid unwanted renewals with smart reminders.",
+    color: "from-pink-200 to-pink-100",
+    iconColor: "text-pink-600",
+  },
+
+  {
+    icon: CreditCard,
+    title: "Recurring Payments",
+    description:
+      "Track recurring bills and scheduled payments so you never miss a due date.",
+    color: "from-cyan-200 to-cyan-100",
+    iconColor: "text-cyan-600",
+  },
+
   {
     icon: Bell,
     title: "Smart Reminders",
     description:
-      "Get alerts for bills, budgets, and savings goals so you never miss anything.",
-    color: "from-pink-200 to-pink-100",
-    iconColor: "text-pink-600",
+      "Receive alerts for budgets, bills, subscriptions, and important financial activities.",
+    color: "from-rose-200 to-rose-100",
+    iconColor: "text-rose-600",
+  },
+
+  {
+    icon: LayoutDashboard,
+    title: "Interactive Dashboard",
+    description:
+      "Access a beautifully designed dashboard with instant financial summaries and insights.",
+    color: "from-indigo-200 to-indigo-100",
+    iconColor: "text-indigo-600",
+  },
+
+  {
+    icon: ShieldCheck,
+    title: "Secure Authentication",
+    description:
+      "JWT-based authentication and secure backend systems to keep your financial data protected.",
+    color: "from-green-200 to-green-100",
+    iconColor: "text-green-700",
+  },
+
+  {
+    icon: Smartphone,
+    title: "Modern Mobile Experience",
+    description:
+      "Built with React Native and Expo for a fast, smooth, and native mobile experience.",
+    color: "from-sky-200 to-sky-100",
+    iconColor: "text-sky-600",
+  },
+
+  {
+    icon: BadgeCheck,
+    title: "Production Ready",
+    description:
+      "Published on Google Play Store with scalable backend architecture and production deployment.",
+    color: "from-orange-200 to-orange-100",
+    iconColor: "text-orange-600",
   },
 ];
 
@@ -73,71 +139,219 @@ export default function Features() {
     <>
       <Navbar />
 
-      <section id="features" className="relative py-36 px-6 overflow-hidden">
+      <section id="features" className="relative overflow-hidden py-36 px-6">
         {/* Background */}
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-white" />
-        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 w-[900px] h-[900px] bg-indigo-500/10 blur-[160px] rounded-full -z-10" />
+        <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-zinc-50 to-white" />
 
-        <div className="max-w-6xl mx-auto">
+        {/* Glow */}
+        <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-[160px] -z-10" />
+
+        {/* Grid Pattern */}
+        <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] [background-size:44px_44px]" />
+
+        <div className="mx-auto max-w-7xl">
           {/* Heading */}
-          <div className="text-center mb-28">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-[1.05]">
+          <div className="mb-28 text-center">
+            <div
+              className="
+              inline-flex items-center gap-2
+
+              rounded-full
+
+              border border-indigo-100
+
+              bg-indigo-50
+
+              px-4 py-2
+
+              text-sm font-medium text-indigo-700
+            "
+            >
+              🚀 Powerful Personal Finance Tools
+            </div>
+
+            <h2
+              className="
+              mt-8
+
+              text-4xl md:text-5xl lg:text-6xl
+
+              font-semibold
+
+              tracking-tight
+
+              leading-[1.05]
+            "
+            >
               Everything you need to
               <br />
-              <span className="bg-gradient-to-r from-indigo-600 via-blue-500 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-indigo-600 via-blue-500 to-violet-600 bg-clip-text text-transparent">
                 manage your finances
               </span>
             </h2>
 
-            <p className="mt-6 text-gray-600 max-w-2xl mx-auto text-lg leading-relaxed">
-              Powerful tools to track, save, and grow your money effortlessly
-              with FinTrack mobile app.
+            <p
+              className="
+              mx-auto mt-7
+
+              max-w-3xl
+
+              text-lg
+
+              leading-8
+
+              text-black/60
+            "
+            >
+              FinTrack combines expense tracking, budgeting, analytics,
+              subscriptions, savings goals, and smart financial insights into
+              one seamless mobile experience.
             </p>
           </div>
 
-          {/* Grid */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {features.map((f, i) => (
+          {/* Features Grid */}
+          <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
+            {features.map((feature, index) => (
               <div
-                key={i}
-                onMouseEnter={() => setHovered(i)}
+                key={index}
+                onMouseEnter={() => setHovered(index)}
                 onMouseLeave={() => setHovered(null)}
-                className="relative group"
+                className="group relative"
               >
-                {/* Outer glow border */}
-                <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-gray-200/60 to-transparent opacity-0 group-hover:opacity-100 transition duration-500" />
+                {/* Hover Glow */}
+                <div
+                  className={`
+                  absolute inset-0 rounded-[32px]
+
+                  bg-gradient-to-b
+                  from-indigo-500/10
+                  to-transparent
+
+                  blur-xl
+
+                  transition-opacity duration-500
+
+                  ${hovered === index ? "opacity-100" : "opacity-0"}
+                `}
+                />
 
                 {/* Card */}
-                <div className="relative h-full rounded-3xl bg-white border border-gray-200/70 p-8 shadow-[0_10px_40px_rgba(0,0,0,0.04)] transition-all duration-500 ease-out group-hover:-translate-y-3 group-hover:shadow-[0_25px_60px_rgba(0,0,0,0.08)]">
-                  {/* Spotlight glow */}
+                <div
+                  className="
+                  relative h-full overflow-hidden
+
+                  rounded-[32px]
+
+                  border border-black/5
+
+                  bg-white/80
+
+                  p-8
+
+                  shadow-[0_10px_40px_rgba(0,0,0,0.04)]
+
+                  backdrop-blur-2xl
+
+                  transition-all duration-500
+
+                  group-hover:-translate-y-2
+                  group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.08)]
+                "
+                >
+                  {/* Gradient Overlay */}
                   <div
-                    className={`pointer-events-none absolute inset-0 rounded-3xl transition-opacity duration-500 ${
-                      hovered === i ? "opacity-100" : "opacity-0"
-                    }`}
+                    className={`
+                    pointer-events-none absolute inset-0 rounded-[32px]
+
+                    transition-opacity duration-500
+
+                    ${hovered === index ? "opacity-100" : "opacity-0"}
+                  `}
                     style={{
                       background:
-                        "radial-gradient(600px circle at center, rgba(99,102,241,0.12), transparent 40%)",
+                        "radial-gradient(600px circle at top, rgba(99,102,241,0.08), transparent 40%)",
                     }}
                   />
 
                   {/* Icon */}
                   <div
-                    className={`w-14 h-14 flex items-center justify-center rounded-2xl mb-6 bg-gradient-to-b ${f.color} shadow-inner`}
+                    className={`
+                    relative z-10
+
+                    mb-7
+
+                    flex h-16 w-16 items-center justify-center
+
+                    rounded-3xl
+
+                    bg-gradient-to-b ${feature.color}
+
+                    shadow-inner
+                  `}
                   >
-                    <f.icon
-                      className={`w-6 h-6 ${f.iconColor} transition-transform duration-300 group-hover:scale-110`}
+                    <feature.icon
+                      className={`
+                      h-7 w-7
+
+                      ${feature.iconColor}
+
+                      transition-transform duration-300
+
+                      group-hover:scale-110
+                    `}
                     />
                   </div>
 
-                  {/* Title */}
-                  <h3 className="text-xl font-semibold text-gray-900">
-                    {f.title}
-                  </h3>
+                  {/* Content */}
+                  <div className="relative z-10">
+                    <h3
+                      className="
+                      text-2xl
 
-                  {/* Description */}
-                  <p className="text-gray-600 mt-3 text-sm leading-relaxed">
-                    {f.description}
-                  </p>
+                      font-semibold
+
+                      tracking-tight
+
+                      text-black
+                    "
+                    >
+                      {feature.title}
+                    </h3>
+
+                    <p
+                      className="
+                      mt-4
+
+                      text-[15px]
+
+                      leading-7
+
+                      text-black/60
+                    "
+                    >
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Bottom Accent */}
+                  <div
+                    className="
+                    absolute bottom-0 left-0 right-0
+
+                    h-[2px]
+
+                    scale-x-0
+
+                    bg-gradient-to-r
+                    from-indigo-500
+                    via-blue-500
+                    to-violet-500
+
+                    transition-transform duration-500
+
+                    group-hover:scale-x-100
+                  "
+                  />
                 </div>
               </div>
             ))}

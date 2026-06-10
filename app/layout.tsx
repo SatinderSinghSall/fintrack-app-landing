@@ -5,6 +5,7 @@ import "./globals.css";
 import WaitlistModal from "@/components/waitlist-modal";
 import JoinedWaitlistModal from "@/components/joined-waitlist-modal";
 import ScrollToTop from "@/components/scroll-to-top";
+import PlayStoreDownloadModal from "@/components/playstore-download-modal";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -123,6 +124,7 @@ export default function RootLayout({
 
         <WaitlistModal />
         <JoinedWaitlistModal />
+        <PlayStoreDownloadModal />
 
         <ScrollToTop />
 
