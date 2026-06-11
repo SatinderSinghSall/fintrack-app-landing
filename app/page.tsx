@@ -10,6 +10,7 @@ import Pricing from "@/components/pricing";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
 import TrustSection from "@/components/TrustSection";
 import PlayStoreCTA from "@/components/PlayStoreCTA";
+import SubscriptionFeatureCTA from "@/components/subscription-feature-cta";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
       <Features />
       <Screenshots />
       <PlayStoreCTA />
+      <SubscriptionFeatureCTA />
       <Pricing />
       <Testimonials />
       <CTA />
