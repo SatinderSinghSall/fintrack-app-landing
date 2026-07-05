@@ -3,17 +3,24 @@
 import Image from "next/image";
 
 const screenshots = [
-  "/images/screenshots/screenshot - 1.jpeg",
-  "/images/screenshots/screenshot - 2.jpeg",
-  "/images/screenshots/screenshot - 3.jpeg",
-  "/images/screenshots/screenshot - 4.jpeg",
-  "/images/screenshots/screenshot - 5.jpeg",
-  "/images/screenshots/screenshot - 6.jpeg",
-  "/images/screenshots/screenshot - 7.jpeg",
-  "/images/screenshots/screenshot - 8.jpeg",
-  "/images/screenshots/screenshot - 9.jpeg",
-  "/images/screenshots/screenshot - 10.jpeg",
-  "/images/screenshots/screenshot - 11.jpeg",
+  "/images/app-screenshots/Screen-1.jpeg",
+  "/images/app-screenshots/Screen-2.jpeg",
+  "/images/app-screenshots/Screen-3.jpeg",
+  "/images/app-screenshots/Screen-4.jpeg",
+  "/images/app-screenshots/Screen-5.jpeg",
+  "/images/app-screenshots/Screen-6.jpeg",
+  "/images/app-screenshots/Screen-7.jpeg",
+  "/images/app-screenshots/Screen-8.jpeg",
+  "/images/app-screenshots/Screen-9.jpeg",
+  "/images/app-screenshots/Screen-10.jpeg",
+  "/images/app-screenshots/Screen-11.jpeg",
+  "/images/app-screenshots/Screen-12.jpeg",
+  "/images/app-screenshots/Screen-13.jpeg",
+  "/images/app-screenshots/Screen-14.jpeg",
+  "/images/app-screenshots/Screen-15.jpeg",
+  "/images/app-screenshots/Screen-16.jpeg",
+  "/images/app-screenshots/Screen-17.jpeg",
+  "/images/app-screenshots/Screen-18.jpeg",
 ];
 
 export default function Screenshots() {

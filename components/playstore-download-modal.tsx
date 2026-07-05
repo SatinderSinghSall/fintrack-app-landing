@@ -543,7 +543,7 @@ export default function PlayStoreDownloadModal() {
                   "
                 >
                   <img
-                    src="/images/screenshots/screenshot - 3.jpeg"
+                    src="/images/app-screenshots/Screen-6.jpeg"
                     alt="FinTrack Analytics"
                     className="w-[180px] xl:w-[240px]"
                   />
@@ -567,7 +567,7 @@ export default function PlayStoreDownloadModal() {
                 "
               >
                 <img
-                  src="/images/screenshots/screenshot - 1.jpeg"
+                  src="/images/app-screenshots/Screen-1.jpeg"
                   alt="FinTrack Dashboard"
                   className="
                     w-[280px]

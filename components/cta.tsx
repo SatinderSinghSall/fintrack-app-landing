@@ -49,7 +49,7 @@ export default function CTA() {
             <div className="animate-[float_3s_ease-in-out_infinite]">
               <div className="rounded-[36px] overflow-hidden border bg-white shadow-[0_40px_120px_rgba(0,0,0,0.18)] transition-all duration-500 group-hover:-translate-y-3">
                 <Image
-                  src="/images/screenshots/screenshot - 1.jpeg"
+                  src="/images/app-screenshots/Screen-1.jpeg"
                   alt="FinTrack app"
                   width={400}
                   height={800}
