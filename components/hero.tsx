@@ -2,9 +2,15 @@
 
 import { Button } from "@/components/ui/button";
 import { Wallet } from "lucide-react";
+import { useState } from "react";
+
 import AppStatusModal from "./app-status-modal";
+import AppPosterModal from "./app-poster-modal";
+import Image from "next/image";
 
 export default function Hero() {
+  const [posterOpen, setPosterOpen] = useState(false);
+
   return (
     <section className="relative overflow-hidden pt-32 pb-24 px-6 text-center">
       {/* Background */}
@@ -76,6 +82,32 @@ export default function Hero() {
           early users
         </p>
       </div>
+
+      <div className="mt-20 flex justify-center">
+        <img
+          src="/images/app-screenshots/app-banner.png"
+          alt="Poster"
+          onClick={() => setPosterOpen(true)}
+          className="
+            w-full
+            max-w-5xl
+            rounded-3xl
+            cursor-pointer
+            shadow-[0_30px_80px_rgba(0,0,0,0.18)]
+            transition-all
+            duration-500
+            hover:scale-[1.02]
+            hover:-translate-y-2
+            hover:shadow-[0_50px_120px_rgba(0,0,0,0.28)]
+          "
+        />
+      </div>
+
+      <AppPosterModal
+        open={posterOpen}
+        onClose={() => setPosterOpen(false)}
+        image="/images/app-screenshots/app-banner.png"
+      />
     </section>
   );
 }
