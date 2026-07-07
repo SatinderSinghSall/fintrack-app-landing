@@ -79,6 +79,173 @@ export default function Screenshots() {
             </div>
           ))}
         </div>
+
+        {/* Download CTA */}
+        <div className="mt-32">
+          <div
+            className="
+      relative
+      overflow-hidden
+
+      mx-auto
+      max-w-6xl
+
+      rounded-[40px]
+
+      border
+      border-white/10
+
+      bg-gradient-to-br
+      from-[#020617]
+      via-[#0B1120]
+      to-black
+
+      px-8
+      py-16
+
+      md:px-16
+      md:py-20
+
+      shadow-[0_40px_120px_rgba(0,0,0,.28)]
+    "
+          >
+            {/* Background Glow */}
+            <div className="absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
+
+            <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-sky-500/10 blur-[120px]" />
+
+            <div className="relative z-10 text-center">
+              {/* Badge */}
+
+              <span
+                className="
+          inline-flex
+          items-center
+
+          rounded-full
+
+          border
+          border-white/10
+
+          bg-white/5
+
+          px-5
+          py-2
+
+          text-sm
+          font-medium
+
+          text-neutral-200
+
+          backdrop-blur-xl
+        "
+              >
+                Available Now on Google Play
+              </span>
+
+              {/* Heading */}
+
+              <h3 className="mt-8 text-4xl font-semibold tracking-tight text-white md:text-6xl">
+                Download FinTrack Today
+              </h3>
+
+              <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-300 md:text-xl">
+                Take control of your finances with smart expense tracking,
+                budgeting, subscriptions, savings goals and beautiful analytics
+                — all inside one premium mobile experience.
+              </p>
+
+              {/* CTA */}
+
+              <div className="mt-12">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.satinder_singh_sall.mobileapp&hl=en_IN"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="
+            inline-flex
+
+            items-center
+            gap-5
+
+            rounded-full
+
+            bg-white
+
+            px-10
+            py-5
+
+            text-black
+
+            shadow-2xl
+
+            transition-all
+            duration-300
+
+            hover:-translate-y-1
+            hover:scale-105
+          "
+                >
+                  <div
+                    className="
+              flex
+              h-14
+              w-14
+              items-center
+              justify-center
+
+              rounded-2xl
+
+              bg-gradient-to-br
+              from-green-400
+              to-emerald-600
+
+              text-3xl
+            "
+                  >
+                    ▶
+                  </div>
+
+                  <div className="text-left">
+                    <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
+                      GET IT ON
+                    </p>
+
+                    <p className="text-2xl font-bold">Google Play</p>
+                  </div>
+                </a>
+              </div>
+
+              {/* Stats */}
+
+              <div className="mt-14 grid grid-cols-2 gap-6 text-left md:grid-cols-4">
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <p className="text-3xl font-bold text-white">4.8★</p>
+                  <p className="mt-1 text-sm text-neutral-400">User Rating</p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <p className="text-3xl font-bold text-white">20+</p>
+                  <p className="mt-1 text-sm text-neutral-400">
+                    Beautiful Screens
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <p className="text-3xl font-bold text-white">100%</p>
+                  <p className="mt-1 text-sm text-neutral-400">
+                    Secure & Private
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
+                  <p className="text-3xl font-bold text-white">Free</p>
+                  <p className="mt-1 text-sm text-neutral-400">Download</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
