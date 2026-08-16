@@ -1,6 +1,4 @@
-"use client";
-
-import { useState } from "react";
+import type { Metadata } from "next";
 import {
   Wallet,
   TrendingUp,
@@ -21,6 +19,113 @@ import Footer from "@/components/footer";
 import TrustSection from "@/components/TrustSection";
 import DeveloperCredit from "@/components/developer-credit";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
+
+const SITE_URL = "https://fintrack-app-satinder.vercel.app";
+const OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
+const DEVELOPER_NAME = "Satinder Singh Sall";
+const DEVELOPER_URL = "https://satinder-portfolio.vercel.app/";
+
+const PLAY_STORE_URL =
+  "https://play.google.com/store/apps/details?id=com.satinder_singh_sall.mobileapp";
+
+export const metadata: Metadata = {
+  title:
+    "FinTrack Features — Expense Tracking, Budgets, Savings & Financial Analytics | By - Satinder Singh Sall",
+
+  description:
+    "Explore FinTrack features including expense tracking, income management, savings goals, smart budgets, financial analytics, subscription tracking, recurring payments, reminders, secure authentication, and a modern mobile experience. Developed by Satinder Singh Sall.",
+
+  keywords: [
+    "FinTrack features",
+    "FinTrack app features",
+    "FinTrack expense tracker",
+    "expense tracker app",
+    "budget tracker app",
+    "personal finance app",
+    "money management app",
+    "budgeting app",
+    "expense management app",
+    "income management app",
+    "savings goals app",
+    "savings tracker",
+    "financial analytics app",
+    "subscription tracker",
+    "recurring payment tracker",
+    "finance reminders",
+    "secure finance app",
+    "React Native finance app",
+    "FinTrack Android app",
+    "Satinder Singh Sall",
+    "FinTrack developed by Satinder Singh Sall",
+  ],
+
+  authors: [
+    {
+      name: DEVELOPER_NAME,
+      url: DEVELOPER_URL,
+    },
+  ],
+
+  creator: DEVELOPER_NAME,
+
+  publisher: "FinTrack",
+
+  category: "finance",
+
+  alternates: {
+    canonical: "/features",
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
+
+  openGraph: {
+    title: "FinTrack Features — Smart Tools for Personal Finance Management",
+
+    description:
+      "Discover FinTrack's tools for tracking expenses, managing budgets, monitoring savings, analyzing finances, managing subscriptions, and more. Developed by Satinder Singh Sall.",
+
+    url: `${SITE_URL}/features`,
+
+    siteName: "FinTrack",
+
+    locale: "en_IN",
+
+    type: "website",
+
+    images: [
+      {
+        url: OG_IMAGE_URL,
+        width: 1200,
+        height: 630,
+        alt: "FinTrack personal finance app features developed by Satinder Singh Sall",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+
+    title:
+      "FinTrack Features — Expense Tracking, Budgets & Financial Analytics",
+
+    description:
+      "Explore FinTrack's personal finance features for expenses, budgets, savings, analytics, subscriptions, and more.",
+
+    images: [OG_IMAGE_URL],
+
+    creator: "@SallSatinder",
+  },
+};
 
 const features = [
   {
@@ -132,38 +237,115 @@ const features = [
   },
 ];
 
-export default function Features() {
-  const [hovered, setHovered] = useState<number | null>(null);
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${SITE_URL}/features#webpage`,
+      url: `${SITE_URL}/features`,
+      name: "FinTrack Features — Expense Tracking, Budgets, Savings & Financial Analytics",
+      description:
+        "Explore the features available in FinTrack, a personal finance and expense tracking application developed by Satinder Singh Sall.",
+      isPartOf: {
+        "@id": `${SITE_URL}/#website`,
+      },
+      about: {
+        "@id": `${SITE_URL}/#mobileapp`,
+      },
+      inLanguage: "en-IN",
+    },
 
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: "FinTrack",
+      url: SITE_URL,
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+      inLanguage: "en-IN",
+    },
+
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "FinTrack",
+      url: SITE_URL,
+      founder: {
+        "@id": `${SITE_URL}/#developer`,
+      },
+    },
+
+    {
+      "@type": "Person",
+      "@id": `${SITE_URL}/#developer`,
+      name: DEVELOPER_NAME,
+      url: DEVELOPER_URL,
+      jobTitle: "Software Developer",
+      sameAs: [
+        "https://www.linkedin.com/in/satinder-singh-sall-b62049204",
+        "https://github.com/SatinderSinghSall",
+        "https://x.com/SallSatinder",
+        "https://www.youtube.com/@satindersinghsall.3841",
+      ],
+      knowsAbout: [
+        "Software Development",
+        "Mobile App Development",
+        "React Native",
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "Personal Finance Applications",
+        "Expense Tracking Applications",
+        "Budgeting Applications",
+      ],
+    },
+
+    {
+      "@type": "MobileApplication",
+      "@id": `${SITE_URL}/#mobileapp`,
+      name: "FinTrack: Expense & Budget",
+      alternateName: "FinTrack",
+      url: SITE_URL,
+      applicationCategory: "FinanceApplication",
+      applicationSubCategory: "Personal Finance",
+      operatingSystem: "Android",
+      description:
+        "FinTrack is a personal finance and budgeting application developed by Satinder Singh Sall for tracking expenses, managing budgets, monitoring savings, income, and subscriptions.",
+      image: OG_IMAGE_URL,
+      creator: {
+        "@id": `${SITE_URL}/#developer`,
+      },
+      publisher: {
+        "@id": `${SITE_URL}/#organization`,
+      },
+      downloadUrl: PLAY_STORE_URL,
+    },
+  ],
+};
+
+export default function Features() {
   return (
     <>
       <Navbar />
 
       <section id="features" className="relative overflow-hidden py-36 px-6">
-        {/* Background */}
         <div className="absolute inset-0 -z-20 bg-gradient-to-b from-white via-zinc-50 to-white" />
 
-        {/* Glow */}
         <div className="absolute top-[-200px] left-1/2 -translate-x-1/2 h-[900px] w-[900px] rounded-full bg-indigo-500/10 blur-[160px] -z-10" />
 
-        {/* Grid Pattern */}
         <div className="absolute inset-0 -z-10 opacity-[0.03] bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] [background-size:44px_44px]" />
 
         <div className="mx-auto max-w-7xl">
-          {/* Heading */}
           <div className="mb-28 text-center">
             <div
               className="
               inline-flex items-center gap-2
-
               rounded-full
-
               border border-indigo-100
-
               bg-indigo-50
-
               px-4 py-2
-
               text-sm font-medium text-indigo-700
             "
             >
@@ -173,13 +355,9 @@ export default function Features() {
             <h2
               className="
               mt-8
-
               text-4xl md:text-5xl lg:text-6xl
-
               font-semibold
-
               tracking-tight
-
               leading-[1.05]
             "
             >
@@ -193,13 +371,9 @@ export default function Features() {
             <p
               className="
               mx-auto mt-7
-
               max-w-3xl
-
               text-lg
-
               leading-8
-
               text-black/60
             "
             >
@@ -209,109 +383,75 @@ export default function Features() {
             </p>
           </div>
 
-          {/* Features Grid */}
           <div className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3">
             {features.map((feature, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
-                className="group relative"
-              >
-                {/* Hover Glow */}
+              <div key={index} className="group relative">
                 <div
-                  className={`
+                  className="
                   absolute inset-0 rounded-[32px]
-
                   bg-gradient-to-b
                   from-indigo-500/10
                   to-transparent
-
                   blur-xl
-
                   transition-opacity duration-500
-
-                  ${hovered === index ? "opacity-100" : "opacity-0"}
-                `}
+                  opacity-0
+                  group-hover:opacity-100
+                "
                 />
 
-                {/* Card */}
                 <div
                   className="
                   relative h-full overflow-hidden
-
                   rounded-[32px]
-
                   border border-black/5
-
                   bg-white/80
-
                   p-8
-
                   shadow-[0_10px_40px_rgba(0,0,0,0.04)]
-
                   backdrop-blur-2xl
-
                   transition-all duration-500
-
                   group-hover:-translate-y-2
                   group-hover:shadow-[0_30px_80px_rgba(0,0,0,0.08)]
                 "
                 >
-                  {/* Gradient Overlay */}
                   <div
-                    className={`
+                    className="
                     pointer-events-none absolute inset-0 rounded-[32px]
-
                     transition-opacity duration-500
-
-                    ${hovered === index ? "opacity-100" : "opacity-0"}
-                  `}
+                    opacity-0
+                    group-hover:opacity-100
+                  "
                     style={{
                       background:
                         "radial-gradient(600px circle at top, rgba(99,102,241,0.08), transparent 40%)",
                     }}
                   />
 
-                  {/* Icon */}
                   <div
                     className={`
                     relative z-10
-
                     mb-7
-
                     flex h-16 w-16 items-center justify-center
-
                     rounded-3xl
-
                     bg-gradient-to-b ${feature.color}
-
                     shadow-inner
                   `}
                   >
                     <feature.icon
                       className={`
                       h-7 w-7
-
                       ${feature.iconColor}
-
                       transition-transform duration-300
-
                       group-hover:scale-110
                     `}
                     />
                   </div>
 
-                  {/* Content */}
                   <div className="relative z-10">
                     <h3
                       className="
                       text-2xl
-
                       font-semibold
-
                       tracking-tight
-
                       text-black
                     "
                     >
@@ -321,11 +461,8 @@ export default function Features() {
                     <p
                       className="
                       mt-4
-
                       text-[15px]
-
                       leading-7
-
                       text-black/60
                     "
                     >
@@ -333,22 +470,16 @@ export default function Features() {
                     </p>
                   </div>
 
-                  {/* Bottom Accent */}
                   <div
                     className="
                     absolute bottom-0 left-0 right-0
-
                     h-[2px]
-
                     scale-x-0
-
                     bg-gradient-to-r
                     from-indigo-500
                     via-blue-500
                     to-violet-500
-
                     transition-transform duration-500
-
                     group-hover:scale-x-100
                   "
                   />
@@ -365,6 +496,13 @@ export default function Features() {
       <DeveloperCredit />
 
       <Footer />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
     </>
   );
 }
