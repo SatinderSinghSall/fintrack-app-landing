@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Wallet, Menu, ArrowUpRight } from "lucide-react";
+import { Wallet, Menu, ShieldCheck } from "lucide-react";
 
-import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import AppStatusModal from "./app-status-modal";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -25,14 +23,14 @@ export default function Navbar() {
         className="
           relative
           w-full
-          max-w-7xl
-          h-[72px]
+          max-w-6xl
+          h-[76px]
           rounded-full
           border border-white/30
           bg-white/70
           backdrop-blur-2xl
           shadow-[0_8px_40px_rgba(0,0,0,0.08)]
-          px-5 md:px-7
+          px-6 md:px-10
           flex items-center justify-between
           overflow-hidden
         "
@@ -41,7 +39,10 @@ export default function Navbar() {
         <div className="absolute inset-0 bg-gradient-to-r from-white/40 via-white/10 to-white/40 pointer-events-none" />
 
         {/* ================= LOGO ================= */}
-        <Link href="/" className="relative z-10 flex items-center gap-3 group">
+        <Link
+          href="/"
+          className="relative z-10 flex items-center gap-3 group shrink-0"
+        >
           <div
             className="
               relative
@@ -62,18 +63,18 @@ export default function Navbar() {
           </div>
 
           <div className="flex flex-col leading-none">
-            <span className="text-[24px] font-semibold tracking-tight">
+            <span className="text-[22px] md:text-[24px] font-semibold tracking-tight">
               FinTrack
             </span>
 
-            <span className="text-[11px] text-zinc-500 tracking-wide">
+            <span className="text-[10px] md:text-[11px] text-zinc-500 tracking-wide">
               SMART FINANCE
             </span>
           </div>
         </Link>
 
         {/* ================= DESKTOP NAV ================= */}
-        <div className="hidden md:flex items-center gap-2 relative z-10">
+        <div className="hidden lg:flex items-center gap-2 relative z-10">
           {navLinks.map((item) => {
             const isActive = pathname === item.href;
 
@@ -85,7 +86,7 @@ export default function Navbar() {
                   relative
                   px-5 py-2.5
                   rounded-full
-                  text-[18px]
+                  text-[17px]
                   font-medium
                   tracking-tight
                   transition-all duration-300
@@ -111,59 +112,45 @@ export default function Navbar() {
           })}
         </div>
 
-        {/* ================= DESKTOP CTA ================= */}
-        <div className="hidden md:flex items-center gap-3 relative z-10">
-          {/* Developer */}
+        {/* ================= DESKTOP ADMIN CTA ================= */}
+        <div className="hidden lg:flex items-center relative z-10 shrink-0">
           <a
-            href="https://satinder-portfolio.vercel.app/"
+            href="https://fintrack-adminpanel.vercel.app/login"
             target="_blank"
             rel="noopener noreferrer"
             className="
-              inline-flex items-center gap-2
-              px-5 py-2.5
+              group
+              relative
+              inline-flex items-center gap-2.5
+              px-6 py-3
               rounded-full
-              border border-black/10
-              bg-white/70
-              text-[14px]
-              font-medium
-              text-zinc-700
-              hover:bg-white
-              hover:shadow-lg
+              border border-zinc-900/15
+              bg-gradient-to-r from-zinc-950 via-zinc-900 to-zinc-950
+              text-[15px]
+              font-semibold
+              text-white
+              shadow-md shadow-black/10
+              hover:shadow-xl hover:shadow-black/20
+              hover:scale-[1.02]
+              active:scale-[0.98]
               transition-all duration-300
             "
           >
-            Meet Developer
-            <ArrowUpRight className="size-4" />
+            <ShieldCheck className="size-4 text-emerald-400 transition-transform duration-300 group-hover:rotate-12" />
+            <span>Admin Panel</span>
+            <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+            </span>
           </a>
-
-          {/* CTA */}
-          <AppStatusModal>
-            <Button
-              className="
-                h-11
-                rounded-full
-                px-6
-                bg-black
-                text-white
-                text-[14px]
-                font-medium
-                shadow-lg shadow-black/20
-                hover:scale-[1.03]
-                hover:shadow-black/30
-                transition-all duration-300
-                cursor-pointer
-              "
-            >
-              Get Started
-            </Button>
-          </AppStatusModal>
         </div>
 
-        {/* ================= MOBILE ================= */}
-        <div className="md:hidden relative z-10">
+        {/* ================= TABLET & MOBILE (Collapsed Navigation) ================= */}
+        <div className="lg:hidden relative z-10">
           <Sheet>
             <SheetTrigger asChild>
               <button
+                aria-label="Open Menu"
                 className="
                   flex items-center justify-center
                   size-11
@@ -172,6 +159,8 @@ export default function Navbar() {
                   bg-white/80
                   backdrop-blur-xl
                   shadow-sm
+                  transition-transform
+                  active:scale-95
                 "
               >
                 <Menu className="size-5" />
@@ -183,7 +172,7 @@ export default function Navbar() {
               className="
                 w-[320px]
                 border-l border-black/10
-                bg-white/90
+                bg-white/95
                 backdrop-blur-3xl
                 p-6
                 flex flex-col
@@ -252,40 +241,26 @@ export default function Navbar() {
 
               <div className="flex-1" />
 
-              {/* Bottom CTA */}
-              <div className="space-y-3 pt-10">
+              {/* Bottom Mobile Admin CTA */}
+              <div className="pt-6">
                 <a
-                  href="https://satinder-portfolio.vercel.app/"
+                  href="https://fintrack-adminpanel.vercel.app/login"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="
                     flex items-center justify-center gap-2
                     w-full
                     rounded-2xl
-                    border border-black/10
-                    bg-white
+                    bg-zinc-950
                     py-4
-                    font-medium
+                    font-semibold
+                    text-white
+                    shadow-md
                   "
                 >
-                  Meet Developer
-                  <ArrowUpRight className="size-4" />
+                  <ShieldCheck className="size-4 text-emerald-400" />
+                  <span>Admin Panel</span>
                 </a>
-
-                <AppStatusModal>
-                  <Button
-                    className="
-                      w-full
-                      rounded-2xl
-                      py-6
-                      bg-black
-                      text-white
-                      font-medium
-                    "
-                  >
-                    Get Started
-                  </Button>
-                </AppStatusModal>
               </div>
             </SheetContent>
           </Sheet>

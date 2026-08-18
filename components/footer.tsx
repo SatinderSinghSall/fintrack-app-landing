@@ -202,6 +202,24 @@ export default function Footer() {
               </h4>
 
               <ul className="mt-6 space-y-4">
+                <ul className="mt-6 space-y-4">
+                  <li>
+                    <a
+                      href="https://fintrack-adminpanel.vercel.app/login"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="
+                      inline-flex items-center gap-2 
+                      text-zinc-600 hover:text-black 
+                      transition-colors duration-300
+                    "
+                    >
+                      <ShieldCheck className="size-4" />
+                      Admin Panel
+                    </a>
+                  </li>
+                </ul>
+
                 <li>
                   <a
                     href="https://satinder-portfolio.vercel.app/"
