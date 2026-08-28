@@ -5,7 +5,7 @@ import Footer from "@/components/footer";
 import GooglePlayCTA from "@/components/GooglePlayCTA";
 import Navbar from "@/components/navbar";
 import TrustSection from "@/components/TrustSection";
-import Image from "next/image";
+import ScreenshotGallery from "@/components/ScreenshotGallery";
 
 const SITE_URL = "https://fintrack-app-satinder.vercel.app";
 
@@ -18,26 +18,22 @@ const DEVELOPER_URL = "https://satinder-portfolio.vercel.app/";
 const PLAY_STORE_URL =
   "https://play.google.com/store/apps/details?id=com.satinder_singh_sall.mobileapp&hl=en_IN";
 
-const screenshots = [
-  "/images/app-screenshots/Screen-1.jpeg",
-  "/images/app-screenshots/Screen-2.jpeg",
-  "/images/app-screenshots/Screen-3.jpeg",
-  "/images/app-screenshots/Screen-4.jpeg",
-  "/images/app-screenshots/Screen-5.jpeg",
-  "/images/app-screenshots/Screen-6.jpeg",
-  "/images/app-screenshots/Screen-7.jpeg",
-  "/images/app-screenshots/Screen-8.jpeg",
-  "/images/app-screenshots/Screen-9.jpeg",
-  "/images/app-screenshots/Screen-10.jpeg",
-  "/images/app-screenshots/Screen-11.jpeg",
-  "/images/app-screenshots/Screen-12.jpeg",
-  "/images/app-screenshots/Screen-13.jpeg",
-  "/images/app-screenshots/Screen-14.jpeg",
-  "/images/app-screenshots/Screen-15.jpeg",
-  "/images/app-screenshots/Screen-16.jpeg",
-  "/images/app-screenshots/Screen-17.jpeg",
-  "/images/app-screenshots/Screen-18.jpeg",
-];
+/* =========================================================
+   FINTRACK APP SCREENSHOTS
+========================================================= */
+
+const screenshots = Array.from(
+  { length: 73 },
+  (_, i) =>
+    `/images/app-version-29-v3.2.0/Screen-${String(i + 1).padStart(
+      2,
+      "0",
+    )}.jpeg`,
+);
+
+/* =========================================================
+   SEO
+========================================================= */
 
 export const metadata: Metadata = {
   title: "FinTrack App Screenshots — See the Personal Finance App in Action",
@@ -85,6 +81,7 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -133,45 +130,67 @@ export const metadata: Metadata = {
   },
 };
 
+/* =========================================================
+   STRUCTURED DATA
+========================================================= */
+
 const structuredData = {
   "@context": "https://schema.org",
+
   "@graph": [
     {
       "@type": "WebPage",
+
       "@id": `${SITE_URL}/screenshots#webpage`,
+
       url: `${SITE_URL}/screenshots`,
+
       name: "FinTrack App Screenshots — See the Personal Finance App in Action",
+
       description:
         "Explore screenshots of FinTrack, a personal finance and expense tracking application developed by Satinder Singh Sall.",
+
       isPartOf: {
         "@id": `${SITE_URL}/#website`,
       },
+
       about: {
         "@id": `${SITE_URL}/#mobileapp`,
       },
+
       inLanguage: "en-IN",
     },
 
     {
       "@type": "WebSite",
+
       "@id": `${SITE_URL}/#website`,
+
       name: "FinTrack",
+
       url: SITE_URL,
+
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
+
       inLanguage: "en-IN",
     },
 
     {
       "@type": "Organization",
+
       "@id": `${SITE_URL}/#organization`,
+
       name: "FinTrack",
+
       url: SITE_URL,
+
       logo: {
         "@type": "ImageObject",
         url: `${SITE_URL}/images/icon-fintrack.png`,
       },
+
       founder: {
         "@id": `${SITE_URL}/#developer`,
       },
@@ -179,16 +198,22 @@ const structuredData = {
 
     {
       "@type": "Person",
+
       "@id": `${SITE_URL}/#developer`,
+
       name: DEVELOPER_NAME,
+
       url: DEVELOPER_URL,
+
       jobTitle: "Software Developer",
+
       sameAs: [
         "https://www.linkedin.com/in/satinder-singh-sall-b62049204",
         "https://github.com/SatinderSinghSall",
         "https://x.com/SallSatinder",
         "https://www.youtube.com/@satindersinghsall.3841",
       ],
+
       knowsAbout: [
         "Software Development",
         "Mobile App Development",
@@ -204,35 +229,53 @@ const structuredData = {
 
     {
       "@type": "MobileApplication",
+
       "@id": `${SITE_URL}/#mobileapp`,
+
       name: "FinTrack: Expense & Budget",
+
       alternateName: "FinTrack",
+
       url: SITE_URL,
+
       applicationCategory: "FinanceApplication",
+
       applicationSubCategory: "Personal Finance",
+
       operatingSystem: "Android",
+
       description:
         "FinTrack is a personal finance and budgeting application developed by Satinder Singh Sall for tracking expenses, managing budgets, monitoring savings, income, subscriptions, and financial insights.",
+
       image: OG_IMAGE_URL,
+
       creator: {
         "@id": `${SITE_URL}/#developer`,
       },
+
       publisher: {
         "@id": `${SITE_URL}/#organization`,
       },
+
       downloadUrl: PLAY_STORE_URL,
     },
 
     {
       "@type": "ImageGallery",
+
       "@id": `${SITE_URL}/screenshots#gallery`,
+
       name: "FinTrack App Screenshots",
+
       description:
         "A gallery of FinTrack personal finance app screenshots showing the mobile application's features and user interface.",
+
       url: `${SITE_URL}/screenshots`,
+
       creator: {
         "@id": `${SITE_URL}/#developer`,
       },
+
       about: {
         "@id": `${SITE_URL}/#mobileapp`,
       },
@@ -240,198 +283,393 @@ const structuredData = {
   ],
 };
 
+/* =========================================================
+   PAGE
+========================================================= */
+
 export default function Screenshots() {
   return (
     <>
       <Navbar />
 
-      <section
-        id="screenshots"
-        className="relative py-28 sm:py-32 md:py-40 px-4 sm:px-6 overflow-hidden md:overflow-visible"
-      >
-        <div className="absolute inset-0 -z-10 bg-gradient-to-b from-white via-gray-50 to-white" />
+      <main>
+        <section
+          id="screenshots"
+          className="
+            relative
+            overflow-hidden
+            px-4
+            pb-24
+            pt-28
+            sm:px-6
+            sm:pb-28
+            sm:pt-32
+            md:pb-36
+            md:pt-40
+          "
+        >
+          {/* =================================================
+              PREMIUM BACKGROUND
+          ================================================= */}
 
-        <div className="hidden sm:block pointer-events-none absolute inset-y-0 left-0 w-10 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-r from-white to-transparent z-10" />
+          <div
+            className="
+              pointer-events-none
+              absolute
+              inset-0
+              -z-20
+              bg-[radial-gradient(circle_at_50%_15%,rgba(59,130,246,0.055),transparent_34%),linear-gradient(to_bottom,#fff,#fafafa_45%,#fff)]
+            "
+          />
 
-        <div className="hidden sm:block pointer-events-none absolute inset-y-0 right-0 w-10 sm:w-16 md:w-24 lg:w-32 bg-gradient-to-l from-white to-transparent z-10" />
+          <div
+            className="
+              pointer-events-none
+              absolute
+              left-1/2
+              top-[320px]
+              -z-10
+              h-[420px]
+              w-[720px]
+              -translate-x-1/2
+              rounded-full
+              bg-blue-100/20
+              blur-[150px]
+            "
+          />
 
-        <div className="max-w-7xl mx-auto px-2 sm:px-4 md:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight">
-            See FinTrack in action
-          </h1>
+          <div
+            className="
+              pointer-events-none
+              absolute
+              right-[-180px]
+              top-[1100px]
+              -z-10
+              h-[480px]
+              w-[480px]
+              rounded-full
+              bg-violet-100/20
+              blur-[140px]
+            "
+          />
 
-          <p className="mt-4 sm:mt-6 text-gray-600 text-base sm:text-lg max-w-3xl mx-auto">
-            A clean, intuitive experience designed mobile app to help you stay
-            in control of your finances.
-          </p>
+          {/* =================================================
+              MAIN CONTAINER
+          ================================================= */}
 
-          <div className="mt-12 sm:mt-16 md:mt-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8">
-            {screenshots.map((src, i) => (
+          <div className="mx-auto max-w-[1540px]">
+            {/* =================================================
+                HERO
+            ================================================= */}
+
+            <div className="mx-auto max-w-4xl text-center">
               <div
-                key={i}
-                className={`
-                group relative rounded-[24px] sm:rounded-[28px] overflow-hidden bg-white
-                border border-black/5
-                shadow-[0_8px_25px_rgba(0,0,0,0.06)]
-                hover:shadow-[0_20px_60px_rgba(0,0,0,0.12)]
-                transition-all duration-500
-                hover:-translate-y-2
-                ${i % 2 === 0 ? "mt-4 sm:mt-6" : "mt-0"}
-              `}
+                className="
+                  inline-flex
+                  items-center
+                  gap-2
+                  rounded-full
+                  border
+                  border-black/[0.06]
+                  bg-white/90
+                  px-4
+                  py-2
+                  text-xs
+                  font-medium
+                  text-gray-600
+                  shadow-[0_8px_30px_rgba(0,0,0,0.045)]
+                  backdrop-blur-xl
+                "
               >
-                <Image
-                  src={src}
-                  alt={`FinTrack personal finance app screenshot ${i + 1}`}
-                  width={300}
-                  height={600}
-                  className="object-cover w-full h-full transition-transform duration-700 group-hover:scale-[1.04]"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition" />
-
-                <div className="absolute inset-0 rounded-[24px] sm:rounded-[28px] ring-1 ring-inset ring-black/5 pointer-events-none" />
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-32">
-            <div
-              className="
-      relative
-      overflow-hidden
-      mx-auto
-      max-w-6xl
-      rounded-[40px]
-      border
-      border-white/10
-      bg-gradient-to-br
-      from-[#020617]
-      via-[#0B1120]
-      to-black
-      px-8
-      py-16
-      md:px-16
-      md:py-20
-      shadow-[0_40px_120px_rgba(0,0,0,.28)]
-    "
-            >
-              <div className="absolute -top-32 left-1/2 h-80 w-80 -translate-x-1/2 rounded-full bg-violet-500/20 blur-[120px]" />
-
-              <div className="absolute bottom-0 right-0 h-72 w-72 rounded-full bg-sky-500/10 blur-[120px]" />
-
-              <div className="relative z-10 text-center">
                 <span
                   className="
-          inline-flex
-          items-center
-          rounded-full
-          border
-          border-white/10
-          bg-white/5
-          px-5
-          py-2
-          text-sm
-          font-medium
-          text-neutral-200
-          backdrop-blur-xl
-        "
-                >
-                  Available Now on Google Play
-                </span>
+                    h-2
+                    w-2
+                    rounded-full
+                    bg-emerald-500
+                    shadow-[0_0_0_4px_rgba(16,185,129,0.10)]
+                  "
+                />
+                FinTrack v3.2.0
+              </div>
 
-                <h2 className="mt-8 text-4xl font-semibold tracking-tight text-white md:text-6xl">
-                  Download FinTrack Today
-                </h2>
+              <h1
+                className="
+                  mt-7
+                  text-[clamp(2.7rem,6vw,5.8rem)]
+                  font-semibold
+                  leading-[0.98]
+                  tracking-[-0.055em]
+                  text-gray-950
+                "
+              >
+                See FinTrack in action
+              </h1>
 
-                <p className="mx-auto mt-6 max-w-3xl text-lg leading-relaxed text-neutral-300 md:text-xl">
-                  Take control of your finances with smart expense tracking,
-                  budgeting, subscriptions, savings goals and beautiful
-                  analytics — all inside one premium mobile experience.
-                </p>
+              <p
+                className="
+                  mx-auto
+                  mt-6
+                  max-w-3xl
+                  text-[15px]
+                  leading-7
+                  text-gray-500
+                  sm:text-lg
+                  sm:leading-8
+                  md:text-xl
+                "
+              >
+                Explore the complete FinTrack mobile experience through real app
+                screens designed to help you track spending, manage budgets,
+                grow savings and understand your finances.
+              </p>
+            </div>
 
-                <div className="mt-12">
-                  <a
-                    href={PLAY_STORE_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+            {/* =================================================
+                GALLERY
+            ================================================= */}
+
+            <ScreenshotGallery screenshots={screenshots} />
+
+            {/* =================================================
+                DOWNLOAD CTA
+            ================================================= */}
+
+            <div className="mt-24 sm:mt-28 md:mt-32">
+              <div
+                className="
+                  relative
+                  mx-auto
+                  max-w-6xl
+                  overflow-hidden
+                  rounded-[30px]
+                  border
+                  border-white/10
+                  bg-gradient-to-br
+                  from-[#020617]
+                  via-[#0B1120]
+                  to-black
+                  px-6
+                  py-14
+                  shadow-[0_40px_120px_rgba(0,0,0,.24)]
+                  sm:rounded-[36px]
+                  sm:px-10
+                  sm:py-16
+                  md:rounded-[42px]
+                  md:px-16
+                  md:py-20
+                "
+              >
+                {/* Glow */}
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    -top-40
+                    left-1/2
+                    h-96
+                    w-96
+                    -translate-x-1/2
+                    rounded-full
+                    bg-violet-500/20
+                    blur-[130px]
+                  "
+                />
+
+                <div
+                  className="
+                    pointer-events-none
+                    absolute
+                    bottom-[-120px]
+                    right-[-80px]
+                    h-80
+                    w-80
+                    rounded-full
+                    bg-sky-500/10
+                    blur-[120px]
+                  "
+                />
+
+                <div className="relative z-10 text-center">
+                  <span
                     className="
-            inline-flex
-            items-center
-            gap-5
-            rounded-full
-            bg-white
-            px-10
-            py-5
-            text-black
-            shadow-2xl
-            transition-all
-            duration-300
-            hover:-translate-y-1
-            hover:scale-105
-          "
+                      inline-flex
+                      items-center
+                      rounded-full
+                      border
+                      border-white/10
+                      bg-white/[0.06]
+                      px-5
+                      py-2
+                      text-sm
+                      font-medium
+                      text-neutral-200
+                      shadow-inner
+                      backdrop-blur-xl
+                    "
                   >
-                    <div
+                    Available Now on Google Play
+                  </span>
+
+                  <h2
+                    className="
+                      mt-8
+                      text-4xl
+                      font-semibold
+                      tracking-[-0.04em]
+                      text-white
+                      sm:text-5xl
+                      md:text-6xl
+                    "
+                  >
+                    Download FinTrack Today
+                  </h2>
+
+                  <p
+                    className="
+                      mx-auto
+                      mt-6
+                      max-w-3xl
+                      text-base
+                      leading-7
+                      text-neutral-300
+                      sm:text-lg
+                      sm:leading-8
+                      md:text-xl
+                    "
+                  >
+                    Take control of your finances with smart expense tracking,
+                    budgeting, subscriptions, savings goals and beautiful
+                    analytics — all inside one premium mobile experience.
+                  </p>
+
+                  <div className="mt-10 sm:mt-12">
+                    <a
+                      href={PLAY_STORE_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="
-              flex
-              h-14
-              w-14
-              items-center
-              justify-center
-              rounded-2xl
-              bg-gradient-to-br
-              from-green-400
-              to-emerald-600
-              text-3xl
-            "
+                        inline-flex
+                        cursor-pointer
+                        items-center
+                        gap-4
+                        rounded-full
+                        bg-white
+                        px-6
+                        py-4
+                        text-black
+                        shadow-2xl
+                        transition-all
+                        duration-300
+                        hover:-translate-y-1
+                        hover:scale-[1.02]
+                        hover:shadow-[0_24px_70px_rgba(255,255,255,0.14)]
+                        active:scale-[0.98]
+                        sm:gap-5
+                        sm:px-10
+                        sm:py-5
+                      "
                     >
-                      ▶
-                    </div>
+                      <div
+                        className="
+                          flex
+                          h-12
+                          w-12
+                          shrink-0
+                          items-center
+                          justify-center
+                          rounded-2xl
+                          bg-gradient-to-br
+                          from-green-400
+                          to-emerald-600
+                          text-2xl
+                          shadow-lg
+                          sm:h-14
+                          sm:w-14
+                          sm:text-3xl
+                        "
+                      >
+                        ▶
+                      </div>
 
-                    <div className="text-left">
-                      <p className="text-xs uppercase tracking-[0.25em] text-neutral-500">
-                        GET IT ON
-                      </p>
+                      <div className="text-left">
+                        <p
+                          className="
+                            text-[10px]
+                            uppercase
+                            tracking-[0.25em]
+                            text-neutral-500
+                            sm:text-xs
+                          "
+                        >
+                          GET IT ON
+                        </p>
 
-                      <p className="text-2xl font-bold">Google Play</p>
-                    </div>
-                  </a>
-                </div>
-
-                <div className="mt-14 grid grid-cols-2 gap-6 text-left md:grid-cols-4">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                    <p className="text-3xl font-bold text-white">4.8★</p>
-                    <p className="mt-1 text-sm text-neutral-400">User Rating</p>
+                        <p className="text-xl font-bold sm:text-2xl">
+                          Google Play
+                        </p>
+                      </div>
+                    </a>
                   </div>
 
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                    <p className="text-3xl font-bold text-white">18+</p>
-                    <p className="mt-1 text-sm text-neutral-400">
-                      Beautiful Screens
-                    </p>
-                  </div>
+                  <div
+                    className="
+                      mx-auto
+                      mt-12
+                      grid
+                      max-w-4xl
+                      grid-cols-2
+                      gap-3
+                      sm:mt-14
+                      sm:grid-cols-4
+                      sm:gap-4
+                    "
+                  >
+                    {[
+                      ["4.8★", "User Rating"],
+                      ["73", "App Screens"],
+                      ["100%", "Secure & Private"],
+                      ["Free", "Download"],
+                    ].map(([value, label]) => (
+                      <div
+                        key={label}
+                        className="
+                          rounded-2xl
+                          border
+                          border-white/10
+                          bg-white/[0.045]
+                          p-4
+                          text-left
+                          backdrop-blur-xl
+                          transition-colors
+                          hover:bg-white/[0.07]
+                          sm:p-5
+                        "
+                      >
+                        <p className="text-2xl font-bold text-white sm:text-3xl">
+                          {value}
+                        </p>
 
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                    <p className="text-3xl font-bold text-white">100%</p>
-                    <p className="mt-1 text-sm text-neutral-400">
-                      Secure & Private
-                    </p>
-                  </div>
-
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur">
-                    <p className="text-3xl font-bold text-white">Free</p>
-                    <p className="mt-1 text-sm text-neutral-400">Download</p>
+                        <p className="mt-1 text-xs text-neutral-400 sm:text-sm">
+                          {label}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <TrustSection />
-      <GooglePlayCTA />
+        <TrustSection />
+
+        <GooglePlayCTA />
+      </main>
 
       <DeveloperCredit />
+
       <Footer />
 
       <script
