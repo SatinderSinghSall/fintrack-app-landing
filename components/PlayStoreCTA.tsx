@@ -117,6 +117,7 @@ export default function PlayStoreCTA() {
               </p>
 
               {/* Feature Pills */}
+              {/* Feature Pills */}
               <div className="mt-10 flex flex-wrap gap-3">
                 {[
                   {
@@ -183,26 +184,56 @@ export default function PlayStoreCTA() {
                     icon: Download,
                     label: "Cross Platform Ready",
                   },
+
+                  // Additional FinTrack Features
+                  {
+                    icon: BadgeCheck,
+                    label: "Subscription Management",
+                  },
+                  {
+                    icon: BarChart3,
+                    label: "Subscription Analytics",
+                  },
+                  {
+                    icon: ArrowUpRight,
+                    label: "Transaction History",
+                  },
+                  {
+                    icon: Smartphone,
+                    label: "Notifications",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    label: "Account & App Settings",
+                  },
+                  {
+                    icon: Wallet,
+                    label: "In-App Announcements",
+                  },
+                  {
+                    icon: PiggyBank,
+                    label: "Financial Tips & Learning Hub",
+                  },
+                  {
+                    icon: ArrowUpRight,
+                    label: "Feedback & Support",
+                  },
+                  {
+                    icon: ShieldCheck,
+                    label: "Account Privacy & Deletion",
+                  },
                 ].map((item, index) => (
                   <div
                     key={index}
                     className="
         flex items-center gap-2
-
         rounded-2xl
-
         border border-black/5
-
         bg-black/[0.03]
-
         px-4 py-3
-
         text-sm font-medium text-black/70
-
         backdrop-blur-xl
-
         transition-all duration-300
-
         hover:-translate-y-0.5
         hover:bg-black/[0.05]
       "

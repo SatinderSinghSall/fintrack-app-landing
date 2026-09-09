@@ -24,30 +24,73 @@ const features = [
     icon: Wallet,
     label: "Expense Tracking",
   },
-
+  {
+    icon: BarChart3,
+    label: "Income Management",
+  },
+  {
+    icon: Download,
+    label: "Budget Planning",
+  },
   {
     icon: PiggyBank,
     label: "Savings Goals",
   },
-
   {
     icon: BarChart3,
     label: "Financial Analytics",
   },
-
+  {
+    icon: BarChart3,
+    label: "Spending Insights",
+  },
   {
     icon: Repeat,
-    label: "Subscriptions",
+    label: "Subscription Management",
   },
-
+  {
+    icon: Repeat,
+    label: "Recurring Payments",
+  },
   {
     icon: Bell,
     label: "Smart Reminders",
   },
-
+  {
+    icon: BarChart3,
+    label: "Transaction History",
+  },
+  {
+    icon: Wallet,
+    label: "Interactive Dashboard",
+  },
+  {
+    icon: Bell,
+    label: "Notifications",
+  },
+  {
+    icon: Bell,
+    label: "In-App Announcements",
+  },
+  {
+    icon: Star,
+    label: "Financial Tips & Learning",
+  },
   {
     icon: ShieldCheck,
     label: "Secure Authentication",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Account & App Settings",
+  },
+  {
+    icon: Wallet,
+    label: "Feedback & Support",
+  },
+  {
+    icon: ShieldCheck,
+    label: "Privacy & Account Deletion",
   },
 ];
 

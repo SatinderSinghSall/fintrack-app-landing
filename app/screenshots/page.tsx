@@ -22,14 +22,21 @@ const PLAY_STORE_URL =
    FINTRACK APP SCREENSHOTS
 ========================================================= */
 
-const screenshots = Array.from(
-  { length: 73 },
-  (_, i) =>
-    `/images/app-version-29-v3.2.0/Screen-${String(i + 1).padStart(
-      2,
-      "0",
-    )}.jpeg`,
-);
+const screenshots = [
+  ...Array.from(
+    { length: 32 },
+    (_, i) => `/images/app-version-36-v3.3.1/3.3.1/Screen-${i + 1}.jpeg`,
+  ),
+
+  ...Array.from(
+    { length: 73 },
+    (_, i) =>
+      `/images/app-version-36-v3.3.1/Screen-${String(i + 1).padStart(
+        2,
+        "0",
+      )}.jpeg`,
+  ),
+];
 
 /* =========================================================
    SEO
@@ -390,7 +397,7 @@ export default function Screenshots() {
                     shadow-[0_0_0_4px_rgba(16,185,129,0.10)]
                   "
                 />
-                FinTrack v3.2.0
+                FinTrack v3.3.1
               </div>
 
               <h1

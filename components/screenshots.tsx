@@ -4,14 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useEffect, useMemo, useState } from "react";
 
-const screenshots = Array.from(
-  { length: 73 },
-  (_, i) =>
-    `/images/app-version-29-v3.2.0/Screen-${String(i + 1).padStart(
-      2,
-      "0",
-    )}.jpeg`,
-);
+const screenshots = [
+  ...Array.from(
+    { length: 32 },
+    (_, i) => `/images/app-version-36-v3.3.1/3.3.1/Screen-${i + 1}.jpeg`,
+  ),
+
+  ...Array.from(
+    { length: 73 },
+    (_, i) =>
+      `/images/app-version-36-v3.3.1/Screen-${String(i + 1).padStart(
+        2,
+        "0",
+      )}.jpeg`,
+  ),
+];
 
 const VISIBLE_COUNT = 12;
 const STEP = 6;
@@ -216,7 +223,7 @@ export default function Screenshots() {
 
               <span className="relative h-2 w-2 rounded-full bg-emerald-500" />
             </span>
-            FinTrack v3.2.0
+            FinTrack v3.3.1
           </div>
 
           <h2
@@ -265,7 +272,7 @@ export default function Screenshots() {
                 </h3>
 
                 <span className="rounded-full border border-black/[0.05] bg-gray-50 px-2.5 py-1 text-[10px] font-semibold text-gray-500 sm:text-xs">
-                  73 screens
+                  100 + screens
                 </span>
               </div>
 
@@ -605,7 +612,7 @@ export default function Screenshots() {
                 active:scale-[0.98]
               "
             >
-              <span>View all 73 screenshots</span>
+              <span>View all 100+ screenshots</span>
 
               <span
                 className="
