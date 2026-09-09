@@ -15,6 +15,13 @@ import {
   CreditCard,
   LayoutDashboard,
   BadgeCheck,
+  Megaphone,
+  Lightbulb,
+  MessageSquare,
+  ClipboardList,
+  Settings,
+  Database,
+  Trash2,
 } from "lucide-react";
 
 const features = [
@@ -100,12 +107,84 @@ const features = [
   },
 
   {
+    icon: ClipboardList,
+    title: "Transaction History",
+    description:
+      "View and review your financial transactions in one organized place for a clearer picture of your activity.",
+    color: "from-slate-200 to-slate-100",
+    iconColor: "text-slate-700",
+  },
+
+  {
+    icon: Megaphone,
+    title: "In-App Announcements",
+    description:
+      "Stay informed with important FinTrack updates, news, announcements, and new feature releases.",
+    color: "from-purple-200 to-purple-100",
+    iconColor: "text-purple-600",
+  },
+
+  {
+    icon: Lightbulb,
+    title: "Financial Tips & Learning Hub",
+    description:
+      "Discover useful financial tips, guides, and educational content to build better money habits.",
+    color: "from-yellow-200 to-yellow-100",
+    iconColor: "text-yellow-600",
+  },
+
+  {
+    icon: MessageSquare,
+    title: "Feedback & Support",
+    description:
+      "Share feedback, report issues, and keep track of your submitted feedback directly through FinTrack.",
+    color: "from-teal-200 to-teal-100",
+    iconColor: "text-teal-600",
+  },
+
+  {
+    icon: Bell,
+    title: "Notifications",
+    description:
+      "Stay up to date with important reminders, financial activities, subscription updates, and app notifications.",
+    color: "from-red-200 to-red-100",
+    iconColor: "text-red-600",
+  },
+
+  {
+    icon: Settings,
+    title: "Account & App Settings",
+    description:
+      "Manage your account, preferences, and FinTrack app settings from one convenient place.",
+    color: "from-gray-200 to-gray-100",
+    iconColor: "text-gray-700",
+  },
+
+  {
     icon: ShieldCheck,
     title: "Secure Authentication",
     description:
       "JWT-based authentication and secure backend systems to keep your financial data protected.",
     color: "from-green-200 to-green-100",
     iconColor: "text-green-700",
+  },
+
+  {
+    icon: Database,
+    title: "Secure Backend & Database",
+    description:
+      "Built with a secure backend architecture, authenticated APIs, protected user data, and a reliable database system.",
+    color: "from-blue-200 to-blue-100",
+    iconColor: "text-blue-700",
+  },
+
+  {
+    icon: Trash2,
+    title: "Account Deletion & Privacy",
+    description:
+      "Manage your account and access dedicated privacy and account deletion options when needed.",
+    color: "from-neutral-200 to-neutral-100",
+    iconColor: "text-neutral-700",
   },
 
   {
